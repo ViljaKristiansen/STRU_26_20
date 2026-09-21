@@ -63,4 +63,4 @@ is systematically analysed to identify conditions that require further review.
 
 ### BPMN diagram
 
-![BPMN diagram](A2/diagram.svg)
+![BPMN diagram](diagram.svg)
