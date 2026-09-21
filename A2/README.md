@@ -92,7 +92,20 @@ for a subsequent capacity assessment.
 
 ## A2d – Tool idea
 
-### BPMN diagram
+The proposed tool covers the automated IFC checking part of the overall use case.
+
+The tool reads structural data from the IFC model, creates a structural support
+graph and traces potential vertical load paths towards the foundation. It also
+checks whether the required structural information is available for a subsequent
+capacity assessment.
+
+The tool generates a results report containing identified load paths, potential
+load-path discontinuities and missing information.
+
+Structural engineering judgement, capacity verification and decisions regarding
+model changes remain outside the scope of the tool.
+
+### Tool Scope Diagram
 
 ![BPMN diagram](IMG/diagramhighlights.svg)
 
