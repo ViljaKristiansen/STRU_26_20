@@ -8,20 +8,25 @@ Both group members rated their confidence in coding Python as 3 – Agree.
 
 ## A2b – Identify Claim
 
-**Selected report:** 26-06-D-STR-Anon.pdf
+**Selected report:** 26-06-D-STR-Anon.pdf   
 **Selected building:** Building 308 
 
 ### Claim
 
-The new structural system is intended to provide a continuous vertical load path through the new and existing load-bearing elements towards the basement and foundation level.
+In Section 2.1, *Vertical*, on page 2 of Structural Report #2606, it is stated that the new columns are positioned to align with existing load-bearing elements, allowing loads to be transferred through the existing structure towards the foundation.
+
+Based on this statement, the selected claim is:
+
+> **The new structural system is intended to provide a continuous vertical load path through the new and existing load-bearing elements towards the foundation.**
+
 
 ### Motivation
 
-The structural report describes how new columns are positioned to align with existing load-bearing elements where possible, allowing additional loads to
-be transferred through the existing concrete structure towards the basement and foundation.
+We will investigate whether a continuous potential geometric load path can be identified through slabs, beams, columns and walls on successive storeys in the IFC model.
 
-This claim is suitable for further investigation using the IFC model, as the geometry and spatial relationships between structural elements can be analysed
-to identify potential vertical load paths.
+If a continuous path cannot be identified, the location will be flagged for further structural review. The check does not verify structural capacity, but identifies possible discontinuities and missing information in the model.
+
+This claim was selected because Building 308 combines a new timber structure with an existing concrete structure, making the load transfer between new and existing elements particularly important.   
 
 ## A2c – Use Case
 
