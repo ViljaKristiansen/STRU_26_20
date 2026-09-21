@@ -62,5 +62,4 @@ The use case is closest to model checking because information in the BIM model
 is systematically analysed to identify conditions that require further review.
 
 ### BPMN diagram
-
 ![BPMN diagram](diagram.svg)
