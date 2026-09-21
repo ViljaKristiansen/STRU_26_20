@@ -88,4 +88,4 @@ for a subsequent capacity assessment.
 
 ### BPMN diagram
 
-![BPMN diagram](diagramv2.svg)
+![BPMN diagram](diagramv1.svg)
