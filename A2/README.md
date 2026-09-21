@@ -6,60 +6,79 @@ Both group members rated their confidence in coding Python as 3 – Agree.
 **Focus area:** Structures  
 **Role:** Analyst
 
-## A2b - Identify claim
+## A2b – Identify Claim
 
-**Selected report:** Structural Report #2606  
-**Selected building:** Building 308  
-**Focus area:** Structures
+**Selected report:** 26-06-D-STR-Anon.pdf
 
-**Claim from Structural Report #2606:**  
-In the Structural Report for the transformation of Building 308, Section 2.1, *Vertical*, page 2, the following statement is made:
+### Claim
 
-> “The new columns are positioned to align with existing load-bearing elements where possible, allowing additional loads to be transferred through the existing concrete structure down to the basement and foundation level.”
+The new structural system provides a continuous vertical load path through the new and existing load-bearing elements towards the foundation.
 
-**Description of the claim:**  
-Based on the statement in Structural Report #2606, we want to investigate whether the new columns in the IFC model of Building 308 are vertically aligned with columns on the storey below. Columns that do not overlap with a column below will be identified and flagged as potential discontinuities in the vertical load path.
+### Motivation
 
-A column that is not vertically aligned is not necessarily a structural error. The load may instead be transferred through a beam, wall or slab. The flagged areas must therefore be assessed further by a structural engineer.
+The structural report describes how new columns are positioned to align with existing load-bearing elements where possible, allowing additional loads to
+be transferred through the existing concrete structure towards the basement and foundation.
 
-**Justification for selecting the claim:**  
-A clear vertical load path is important for transferring loads through the structure to the foundations. Misaligned columns may introduce concentrated forces or require additional transfer structures. Identifying these locations manually can be time-consuming, particularly in a large structural model.
-
-The claim from Structural Report #2606 is suitable for an OpenBIM-based check because the IFC model can provide information about the columns, their storeys, positions and geometry. An automated check can help identify areas in Building 308 that require closer examination during the design and coordination process.
+This claim is suitable for further investigation using the IFC model, as the geometry and spatial relationships between structural elements can be analysed
+to identify potential vertical load paths.
 
 ## A2c – Use Case
 
 ### How would we check this claim?
-The IFC model is checked to determine whether structural columns are vertically continuous between adjacent storeys. Columns on each storey are identified and their horizontal positions are compared with structural columns on the storey below.
 
-If a column does not align with a column below, it is flagged as a potential discontinuity for further structural review. A discontinuity does not necessarily represent an error, as the load may be transferred through another structural element such as a beam or wall.
+The IFC model is analysed to identify possible vertical load paths through the structural system. Relevant structural elements, such as slabs, beams, columns and walls, are identified and their spatial relationships are analysed.
+
+These relationships can be represented as a structural graph, where structural elements are nodes and potential support relationships are connections. The graph can then be used to investigate the question:
+
+> **Is there an uninterrupted structural support chain from this element to the foundation?**
+
+If no continuous support chain can be identified, the element is flagged as a potential discontinuity for further review by a structural engineer.
+
+In addition, the available information for the elements in the load path is checked to determine whether the model contains the information required for a subsequent structural capacity assessment. This includes geometry, dimensions, material, cross-section and load information.
+
+The use case does not perform a structural capacity calculation.
 
 ### When would this claim need to be checked?
-The check should be performed during the design process and repeated when significant changes are made to the structural model.
+
+The check should be performed during the structural design and coordination process and repeated when significant changes are made to the structural model.
+
+It can be particularly useful when new structural elements interact with an existing structure, as changes in element position or geometry may affect the intended vertical load path.
 
 ### What information does this claim rely on?
-The check relies on information contained in the IFC model, including:
 
-- Structural columns (IfcColumn)
-- Building storeys (IfcBuildingStorey)
-- Column geometry and location
-- Column GlobalId
-- Relationship between elements and storeys
+The check relies primarily on information contained in the IFC model,
+including:
+
+- Structural elements such as slabs, beams, columns and walls
+- Building storeys
+- Element geometry and position
+- Spatial relationships between structural elements
+- Element GlobalId
+- Material information
+- Cross-section and dimensions
+- Load information, if available
+- Foundation elements, if represented in the IFC model
 
 ### Phase
+
 **Design**
 
 ### BIM purpose
+
 **Analyse**
 
-The BIM model is analysed to identify possible discontinuities in the vertical
-structural system.
+The BIM model is analysed to identify potential vertical load paths,
+discontinuities and the availability of information required for further
+structural analysis.
 
 ### BIM Use Case
+
 **Design review / model checking**
 
-The use case is closest to model checking because information in the BIM model
-is systematically analysed to identify conditions that require further review.
+The use case systematically analyses the structural IFC model to identify
+possible load paths and conditions requiring further engineering review. It
+also evaluates whether the model contains sufficient structural information
+for a subsequent capacity assessment.
 
 ### BPMN diagram
 
