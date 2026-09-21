@@ -13,7 +13,7 @@ Both group members rated their confidence in coding Python as 3 – Agree.
 **Focus area:** Structures
 
 **Claim from Structural Report #2606:**  
-In Structural Report #2606 for the transformation of Building 308, Section 2.1, *Vertical*, page 2, the following statement is made:
+In the Structural Report for the transformation of Building 308, Section 2.1, *Vertical*, page 2, the following statement is made:
 
 > “The new columns are positioned to align with existing load-bearing elements where possible, allowing additional loads to be transferred through the existing concrete structure down to the basement and foundation level.”
 
