@@ -138,4 +138,4 @@ Detecting modelling problems early may also reduce unnecessary redesign, constru
 
 The BPMN diagram below presents the internal workflow of the proposed Python/IfcOpenShell tool.
 
-
+![BPMN diagram](IMG/diagramhighlights.svg)
