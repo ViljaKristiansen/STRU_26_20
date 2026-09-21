@@ -9,10 +9,11 @@ Both group members rated their confidence in coding Python as 3 – Agree.
 ## A2b – Identify Claim
 
 **Selected report:** 26-06-D-STR-Anon.pdf
+**Selected building:** Building 308 
 
 ### Claim
 
-The new structural system provides a continuous vertical load path through the new and existing load-bearing elements towards the foundation.
+The new structural system is intended to provide a continuous vertical load path through the new and existing load-bearing elements towards the basement and foundation level.
 
 ### Motivation
 
