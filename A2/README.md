@@ -90,6 +90,12 @@ for a subsequent capacity assessment.
 
 ![BPMN diagram](IMG/diagramv3.svg)
 
+## A2d – Tool idea
+
+### BPMN diagram
+
+![BPMN diagram](IMG/diagramhighlights.svg)
+
 ## A2e – Tool idea
 
 ### IFC Load Path Checker
@@ -137,5 +143,3 @@ Detecting modelling problems early may also reduce unnecessary redesign, constru
 ### BPMN diagram
 
 The BPMN diagram below presents the internal workflow of the proposed Python/IfcOpenShell tool.
-
-![BPMN diagram](IMG/diagramhighlights.svg)
