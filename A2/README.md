@@ -89,3 +89,53 @@ for a subsequent capacity assessment.
 ### BPMN diagram
 
 ![BPMN diagram](IMG/diagramv3.svg)
+
+## A2e – Tool idea
+
+### IFC Load Path Checker
+
+The proposed tool is a Python-based OpenBIM tool developed with IfcOpenShell. Its purpose is to identify potential vertical load paths in a structural IFC model and highlight elements that may require further review by a structural engineer.
+
+The tool uses a structural IFC model as input and extracts relevant elements, including:
+
+- `IfcSlab`
+- `IfcBeam`
+- `IfcColumn`
+- `IfcWall`
+- `IfcFooting`
+- `IfcBuildingStorey`
+
+The geometry, placement, dimensions, material information and `GlobalId` of the elements are extracted. Geometric relationships and a defined tolerance are then used to identify potential support relationships between the elements.
+
+The support relationships are represented as a directed graph. The tool traces potential load paths downwards through slabs, beams, columns and walls. A path is considered complete if it reaches an `IfcFooting`. If foundations are not included in the structural IFC model, the path is traced to the lowest modelled structural level.
+
+Elements without a continuous potential load path are flagged as possible load-path discontinuities. The tool also checks whether information required for a later structural capacity assessment is available, such as element dimensions, materials, cross-sections and loads.
+
+The results report includes:
+
+- Element type and `GlobalId`
+- Associated building storey
+- Potential supporting elements
+- Load-path status
+- Identified discontinuities
+- Missing structural information
+
+The tool performs a geometric and information-based model check. It does not calculate structural capacity or verify that a load path is structurally sufficient. The final assessment must therefore be performed by a structural engineer.
+
+### Business value
+
+The tool can reduce the time required for manual review of structural IFC models. Potential discontinuities and missing information can be identified earlier in the design process, reducing the risk of late design changes, coordination problems and additional costs.
+
+Because the tool uses IFC and IfcOpenShell, it is independent of specific modelling software and can be reused in different OpenBIM projects. The results are traceable through the `GlobalId` of each element, which can improve communication between BIM modellers and structural engineers.
+
+### Societal value
+
+Earlier identification of possible discontinuities can support improved structural quality and safety. The tool does not replace engineering calculations, but it helps structural engineers identify areas requiring additional attention.
+
+Detecting modelling problems early may also reduce unnecessary redesign, construction rework and material waste. This is particularly relevant for renovation projects such as Building 308, where new structural elements must interact with an existing structural system.
+
+### BPMN diagram
+
+The BPMN diagram below presents the internal workflow of the proposed Python/IfcOpenShell tool.
+
+
