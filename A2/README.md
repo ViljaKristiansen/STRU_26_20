@@ -156,3 +156,23 @@ Detecting modelling problems early may also reduce unnecessary redesign, constru
 ### BPMN diagram
 
 The BPMN diagram below presents the internal workflow of the proposed Python/IfcOpenShell tool.
+
+## A2f – Information Requirements
+
+The tool requires both geometric and semantic information from the IFC model
+to construct the structural support graph, trace vertical load paths and assess
+information readiness for further capacity analysis.
+
+| Information required | Where in IFC? | In the model? | Know how to extract with IfcOpenShell? | What do we need to learn? |
+|---|---|---|---|---|
+| Structural columns | IfcColumn | Yes | Yes | - |
+| Structural beams | IfcBeam | Yes | Yes | - |
+| Structural slabs | IfcSlab | Yes | Yes | - |
+| Structural walls | IfcWall | Yes | Yes | - |
+| Building storey | IfcBuildingStorey / spatial containment | Yes | Yes | - |
+| Global element position | ObjectPlacement / geometry | Yes | Partly | Extract and compare global coordinates consistently |
+| Element geometry and dimensions | Representation / geometry | Yes | Partly | Determine element boundaries and geometric overlap |
+| Material | IfcMaterial associations | To be checked | Partly | Extract material assignments consistently |
+| Cross-section / dimensions | Element type, properties or geometry | To be checked | Partly | Determine where section information is stored for different element types |
+| Foundation/support elements | IfcFooting and/or other structural elements | To be checked | No | Identify how foundations and lowest-level supports are represented |
+| Load information | IFC structural/load entities or property sets | To be checked | No | Determine whether loads are represented and how they can be extracted |
