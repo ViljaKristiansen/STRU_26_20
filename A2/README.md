@@ -158,6 +158,7 @@ Detecting modelling problems early may also reduce unnecessary redesign, constru
 ### BPMN diagram
 
 The BPMN diagram below presents the internal workflow of the proposed Python/IfcOpenShell tool.
+![BPMN diagram for the IFC Load Path Checker](IMG/diagram.svg)
 
 ## A2f – Information Requirements
 
