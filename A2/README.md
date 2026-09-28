@@ -162,8 +162,6 @@ The BPMN diagram below presents the internal workflow of the proposed Python/Ifc
 
 ## A2f – Information Requirements
 
-## A2f – Information Requirements
-
 The tool requires geometric and semantic information from both the structural
 IFC model (`26-06-D-STR.ifc`) and the GEO IFC model (`26-06-D-GEO.ifc`) to
 construct the structural support graph, trace vertical load paths and assess
