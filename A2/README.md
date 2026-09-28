@@ -159,20 +159,24 @@ The BPMN diagram below presents the internal workflow of the proposed Python/Ifc
 
 ## A2f – Information Requirements
 
-The tool requires both geometric and semantic information from the IFC model
-to construct the structural support graph, trace vertical load paths and assess
-information readiness for further capacity analysis.
+The tool requires geometric and semantic information from the IFC model to
+construct the structural support graph, trace vertical load paths and assess
+whether relevant structural model information is available for subsequent
+structural calculations.
+
+The selected IFC model was investigated using IfcOpenShell to determine which
+of the required information is available.
 
 | Information required | Where in IFC? | In the model? | Know how to extract with IfcOpenShell? | What do we need to learn? |
 |---|---|---|---|---|
-| Structural columns | IfcColumn | Yes | Yes | - |
-| Structural beams | IfcBeam | Yes | Yes | - |
-| Structural slabs | IfcSlab | Yes | Yes | - |
-| Structural walls | IfcWall | Yes | Yes | - |
-| Building storey | IfcBuildingStorey / spatial containment | Yes | Yes | - |
-| Global element position | ObjectPlacement / geometry | Yes | Partly | Extract and compare global coordinates consistently |
-| Element geometry and dimensions | Representation / geometry | Yes | Partly | Determine element boundaries and geometric overlap |
-| Material | IfcMaterial associations | To be checked | Partly | Extract material assignments consistently |
-| Cross-section / dimensions | Element type, properties or geometry | To be checked | Partly | Determine where section information is stored for different element types |
-| Foundation/support elements | IfcFooting and/or other structural elements | To be checked | No | Identify how foundations and lowest-level supports are represented |
-| Load information | IFC structural/load entities or property sets | To be checked | No | Determine whether loads are represented and how they can be extracted |
+| Structural columns | `IfcColumn` | Yes – 278 | Yes | - |
+| Structural beams | `IfcBeam` | Yes – 272 | Yes | - |
+| Structural slabs | `IfcSlab` | Yes – 157 | Yes | - |
+| Structural walls | `IfcWall` | Yes – 93 | Yes | - |
+| Building storeys | `IfcBuildingStorey` / spatial containment | Yes – 6 | Yes | - |
+| GlobalId | IFC element attribute | Yes | Yes | - |
+| Element position | `ObjectPlacement` / geometry | Yes | Partly | Extract and compare global positions consistently |
+| Element geometry and dimensions | `Representation` / geometry | Yes – geometry available for all 800 checked elements | Partly | Determine element boundaries and geometric overlap |
+| Material | `IfcRelAssociatesMaterial` | Yes – material association for all 800 checked elements | Partly | Extract and interpret material information consistently |
+| Cross-section / profile | `IfcProfileDef`, element types and geometry | Partly – 475 profiles are present | Partly | Determine how profile dimensions are represented and extract them consistently |
+| Lowest structural level | `IfcBuildingStorey` and element placement | Yes | Yes | Define when a load path has reached the lowest represented structural level |
