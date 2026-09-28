@@ -180,3 +180,17 @@ of the required information is available.
 | Material | `IfcRelAssociatesMaterial` | Yes – material association for all 800 checked elements | Partly | Extract and interpret material information consistently |
 | Cross-section / profile | `IfcProfileDef`, element types and geometry | Partly – 475 profiles are present | Partly | Determine how profile dimensions are represented and extract them consistently |
 | Lowest structural level | `IfcBuildingStorey` and element placement | Yes | Yes | Define when a load path has reached the lowest represented structural level |
+
+## A2g – Software Licence
+
+### GPL-3.0
+
+We have chosen the GNU General Public License v3.0 (GPL-3.0) for our project.
+
+The project contains source code and is intended to be open and reusable.
+GPL-3.0 allows others to use, modify and redistribute the code, while requiring
+distributed modified versions to remain available under the same open-source
+licence.
+
+This is suitable for our OpenBIM tool because it supports open development,
+reuse and further improvement of the code.
