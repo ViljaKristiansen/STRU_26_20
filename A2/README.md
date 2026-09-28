@@ -32,7 +32,7 @@ This claim was selected because Building 308 combines a new timber structure wit
 
 ### How would we check this claim?
 
-The IFC model is analysed to identify possible vertical load paths through the structural system. Relevant structural elements, such as slabs, beams, columns and walls, are identified and their spatial relationships are analysed.
+The structural and GEO IFC models are analysed to identify possible vertical load paths through the structural system. Relevant structural elements, such as slabs, beams, columns and walls, are identified and their spatial relationships are analysed across the two models.
 
 These relationships can be represented as a structural graph, where structural elements are nodes and potential support relationships are connections. The graph can then be used to investigate the question:
 
@@ -40,7 +40,7 @@ These relationships can be represented as a structural graph, where structural e
 
 If no continuous support chain can be identified, the element is flagged as a potential discontinuity for further review by a structural engineer.
 
-In addition, the available information for the elements in the load path is checked to determine whether the model contains the information required for a subsequent structural capacity assessment. This includes geometry, dimensions, material, cross-section and load information.
+In addition, the available information for the elements in the load path is checked to determine whether the model contains the information required for a subsequent structural capacity assessment. This includes geometry, dimensions, material and cross-section information.
 
 The use case does not perform a structural capacity calculation.
 
@@ -52,18 +52,17 @@ It can be particularly useful when new structural elements interact with an exis
 
 ### What information does this claim rely on?
 
-The check relies primarily on information contained in the IFC model,
-including:
+The check relies primarily on information contained in the structural and GEO
+IFC models, including:
 
 - Structural elements such as slabs, beams, columns and walls
+- Foundation-related elements
 - Building storeys
 - Element geometry and position
 - Spatial relationships between structural elements
 - Element GlobalId
 - Material information
 - Cross-section and dimensions
-- Load information, if available
-- Foundation elements, if represented in the IFC model
 
 ### Phase
 
@@ -94,10 +93,8 @@ for a subsequent capacity assessment.
 
 The proposed tool covers the automated IFC checking part of the overall use case.
 
-The tool reads structural data from the IFC model, creates a structural support
-graph and traces potential vertical load paths towards the foundation. It also
-checks whether the required structural information is available for a subsequent
-capacity assessment.
+The tool reads structural data from the structural and GEO IFC models, creates a structural support graph and traces potential vertical load paths towards the
+foundation. It also checks whether the required structural information is available for a subsequent capacity assessment.
 
 The tool generates a results report containing identified load paths, potential
 load-path discontinuities and missing information.
@@ -113,22 +110,27 @@ model changes remain outside the scope of the tool.
 
 ### IFC Load Path Checker
 
-The proposed tool is a Python-based OpenBIM tool developed with IfcOpenShell. Its purpose is to identify potential vertical load paths in a structural IFC model and highlight elements that may require further review by a structural engineer.
+The proposed tool is a Python-based OpenBIM tool developed with IfcOpenShell. Its purpose is to identify potential vertical load paths across structural and
+GEO IFC models and highlight elements that may require further review by a structural engineer.
 
-The tool uses a structural IFC model as input and extracts relevant elements, including:
+The tool uses two IFC models as input: the structural IFC model
+(`26-06-D-STR.ifc`) and the GEO IFC model (`26-06-D-GEO.ifc`).
+
+Relevant elements include:
 
 - `IfcSlab`
 - `IfcBeam`
 - `IfcColumn`
 - `IfcWall`
-- `IfcFooting`
 - `IfcBuildingStorey`
 
 The geometry, placement, dimensions, material information and `GlobalId` of the elements are extracted. Geometric relationships and a defined tolerance are then used to identify potential support relationships between the elements.
 
-The support relationships are represented as a directed graph. The tool traces potential load paths downwards through slabs, beams, columns and walls. A path is considered complete if it reaches an `IfcFooting`. If foundations are not included in the structural IFC model, the path is traced to the lowest modelled structural level.
+The support relationships are represented as a directed graph. The tool traces potential load paths downwards through slabs, beams, columns and walls. The
+structural IFC model provides the main structural system, while foundation-related elements are identified in the GEO IFC model. A path is considered complete
+when a continuous potential support chain can be identified towards these foundation-related elements.
 
-Elements without a continuous potential load path are flagged as possible load-path discontinuities. The tool also checks whether information required for a later structural capacity assessment is available, such as element dimensions, materials, cross-sections and loads.
+Elements without a continuous potential load path are flagged as possible load-path discontinuities. The tool also checks whether information required for a later structural capacity assessment is available, such as element dimensions, materials and cross-sections.
 
 The results report includes:
 
@@ -159,27 +161,30 @@ The BPMN diagram below presents the internal workflow of the proposed Python/Ifc
 
 ## A2f – Information Requirements
 
-The tool requires geometric and semantic information from the IFC model to
+## A2f – Information Requirements
+
+The tool requires geometric and semantic information from both the structural
+IFC model (`26-06-D-STR.ifc`) and the GEO IFC model (`26-06-D-GEO.ifc`) to
 construct the structural support graph, trace vertical load paths and assess
 whether relevant structural model information is available for subsequent
 structural calculations.
 
-The selected IFC model was investigated using IfcOpenShell to determine which
-of the required information is available.
+Both IFC models were investigated using IfcOpenShell to determine which of the
+required information is available.
 
-| Information required | Where in IFC? | In the model? | Know how to extract with IfcOpenShell? | What do we need to learn? |
-|---|---|---|---|---|
-| Structural columns | `IfcColumn` | Yes – 278 | Yes | - |
-| Structural beams | `IfcBeam` | Yes – 272 | Yes | - |
-| Structural slabs | `IfcSlab` | Yes – 157 | Yes | - |
-| Structural walls | `IfcWall` | Yes – 93 | Yes | - |
-| Building storeys | `IfcBuildingStorey` / spatial containment | Yes – 6 | Yes | - |
-| GlobalId | IFC element attribute | Yes | Yes | - |
-| Element position | `ObjectPlacement` / geometry | Yes | Partly | Extract and compare global positions consistently |
-| Element geometry and dimensions | `Representation` / geometry | Yes – geometry available for all 800 checked elements | Partly | Determine element boundaries and geometric overlap |
-| Material | `IfcRelAssociatesMaterial` | Yes – material association for all 800 checked elements | Partly | Extract and interpret material information consistently |
-| Cross-section / profile | `IfcProfileDef`, element types and geometry | Partly – 475 profiles are present | Partly | Determine how profile dimensions are represented and extract them consistently |
-| Lowest structural level | `IfcBuildingStorey` and element placement | Yes | Yes | Define when a load path has reached the lowest represented structural level |
+| Information required | Source | Where in IFC? | In the model? | Know how to extract with IfcOpenShell? | What do we need to learn? |
+|---|---|---|---|---|---|
+| Structural columns | STR | `IfcColumn` | Yes – 278 | Yes | - |
+| Structural beams | STR | `IfcBeam` | Yes – 272 | Yes | - |
+| Structural slabs | STR | `IfcSlab` | Yes – 157 | Yes | - |
+| Structural walls | STR | `IfcWall` | Yes – 93 | Yes | - |
+| Foundation-related elements | GEO | `IfcWall` | Yes – 18 identified by foundation-related names | Yes | Determine how these elements connect geometrically to the structural model |
+| Building storeys | STR / GEO | `IfcBuildingStorey` / spatial containment | Yes – 6 in each model | Yes | - |
+| GlobalId | STR / GEO | IFC element attribute | Yes | Yes | - |
+| Element position | STR / GEO | `ObjectPlacement` / geometry | Yes | Partly | Compare global positions consistently across the two models |
+| Element geometry and dimensions | STR / GEO | `Representation` / geometry | Yes | Partly | Determine element boundaries and geometric overlap |
+| Material | STR / GEO | `IfcRelAssociatesMaterial` | Yes | Partly | Extract and interpret material information consistently |
+| Cross-section / profile | STR | `IfcProfileDef`, element types and geometry | Partly – 475 profiles are present | Partly | Determine how profile dimensions are represented and extract them consistently |tructural level |
 
 ## A2g – Software Licence
 
