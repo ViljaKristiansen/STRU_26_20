@@ -6,3 +6,5 @@ Repository for Group 20 – Structures in the DTU course **41934 Advanced BIM**.
 
 - **A1 – Forensic BIM**
 - **A2 – Use Case**
+- **A3 – Teach**
+- **A4 - Tool**
