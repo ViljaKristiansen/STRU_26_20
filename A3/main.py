@@ -1,17 +1,19 @@
+from pathlib import Path
 import ifcopenshell
 
-# Open the IFC model
-model = ifcopenshell.open(
-    r"C:\Users\Vilja\OneDrive - Danmarks Tekniske Universitet\STRU_26_20\ifc filer\26-06-D-STR.ifc"
-)
+# Enter the filename of your IFC model - here we use the STR model as example
+ifc_filename = "26-06-D-STR.ifc"
+
+# Open the model stored beside this script
+model_path = Path(__file__).resolve().parent / ifc_filename
+model = ifcopenshell.open(str(model_path))
 
 # Find all columns
 columns = model.by_type("IfcColumn")
 
-# Print the number of columns
+# Print the total and information about the first five columns
 print("Number of columns:", len(columns))
 
-# Print the name and GlobalId of the first five columns
 for column in columns[:5]:
     print("Name:", column.Name)
     print("GlobalId:", column.GlobalId)
