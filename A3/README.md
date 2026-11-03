@@ -194,7 +194,7 @@ Update the variable names and output label to match the element type.
 
 The accompanying video demonstrates how to prepare the files, run the script, understand the output, and adapt the code to another element type.
 
-**Video link:** To be added before submission.
+**Video link:** (https://youtu.be/-M7Er1a-410)
 
 ## 9. Peer Testing and Feedback
 
