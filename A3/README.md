@@ -24,7 +24,7 @@ After completing this tutorial, you should be able to:
 
 **BIM role:** OpenBIM Analyst
 
-**Target level:** Beginner in Python-based IFC data extraction. The corresponding course role learning level must be confirmed against the course role description.
+**Target level:** OpenBIM Analyst Level 3 — an introductory tutorial on developing a standalone Python script with IfcOpenShell for structural model information extraction.
 
 **Focus area:** Structures
 
