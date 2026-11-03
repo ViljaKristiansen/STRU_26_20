@@ -111,7 +111,3 @@ A short video demonstrates how to run the code in VS Code and explains the resul
 **Extracting Structural BIM Information Using Python and IfcOpenShell**
 
 This tutorial demonstrates how to use Python and IfcOpenShell to extract structural information from an IFC model. Students learn how to identify building elements, count them, and retrieve their names and unique identifiers.
-
-## 8. Feedback and Testing
-
-The tutorial will be tested by fellow students to evaluate whether the instructions are clear and easy to follow. Feedback will be used to improve the tutorial before final submission.
