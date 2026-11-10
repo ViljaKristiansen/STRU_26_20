@@ -34,7 +34,7 @@ The separate IDS preflight checks the presence of selected IFC classes and seman
 - `config.json` – Defines the screening tolerance and provisional foundation candidates.
 - `str_requirements.ids` and `geo_requirements.ids` – Define information requirements for the two IFC models.
 - `requirements.txt` – Lists the required Python libraries.
-- `output/` – Contains the generated analysis and validation results.
+- `output/` – Created when the tool is run and contains the generated analysis and validation results.
 
 
 ### Instructions to run the tool
