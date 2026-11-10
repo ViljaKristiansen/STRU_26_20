@@ -25,6 +25,18 @@ The Python tool uses **IfcOpenShell**, NumPy and Shapely to examine two IFC4 mod
 
 The separate IDS preflight checks the presence of selected IFC classes and semantic information (identity, name, material and storey containment). It does not check structural connections.
 
+
+### Project files
+
+- `main.py` – Main script for running the load-path analysis and exporting results.
+- `load_path.py` – Contains the CAPT, CONN, CHEK and COMM functions.
+- `ids_tools.py` – Creates and validates the IDS files separately.
+- `config.json` – Defines the screening tolerance and provisional foundation candidates.
+- `str_requirements.ids` and `geo_requirements.ids` – Define information requirements for the two IFC models.
+- `requirements.txt` – Lists the required Python libraries.
+- `output/` – Contains the generated analysis and validation results.
+
+
 ### Instructions to run the tool
 
 **Requirements:** Python 3.11 or 3.12 and the packages listed in `requirements.txt`.
