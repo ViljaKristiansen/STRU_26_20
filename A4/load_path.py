@@ -305,11 +305,15 @@ def CHEK_paths(elements, edges):
     by_key = {e.key: e for e in elements}
     supports = {k: [] for k in by_key}
     reverse = {k: [] for k in by_key}
+    area_contact_reverse = {k: [] for k in by_key}
     for edge in edges:
         supports[edge['upper']].append(edge['lower'])
         reverse[edge['lower']].append(edge['upper'])
+        if edge['contact'] == 'AREA_CONTACT':
+            area_contact_reverse[edge['lower']].append(edge['upper'])
     terminals = [e.key for e in elements if e.terminal and e.minimum is not None and not e.error]
     next_step = _paths_to_terminals(reverse, terminals)
+    area_contact_paths = _paths_to_terminals(area_contact_reverse, terminals)
     # The intersection scenario has its own graph and its own example paths.
     review_edges = [edge for e in elements for edge in e.review_connections]
     review_reverse = {k: list(v) for k, v in reverse.items()}
@@ -355,9 +359,18 @@ def CHEK_paths(elements, edges):
             reason = 'UNRESOLVED_SUPPORT_BRANCH'
         else:
             reason = ''
+        if status == 'INSUFFICIENT_GEOMETRY':
+            path_evidence = 'NOT_ASSESSED'
+        elif e.key in area_contact_paths:
+            path_evidence = 'AREA_CONTACT_PATH_EXISTS'
+        elif path:
+            path_evidence = 'PATH_REQUIRES_TOLERANCE'
+        else:
+            path_evidence = 'NO_BEARING_PATH'
         rows.append({'key': e.key, 'GlobalId': e.guid, 'type': e.ifc_class,
                      'name': e.name, 'storey': e.storey, 'status': status,
                      'bearing_path_status': 'NO_PATH_IDENTIFIED_REVIEW' if status == 'REVIEW_PATH_VIA_INTERSECTION' else status,
+                     'bearing_path_evidence': path_evidence,
                      'review_reason': reason,
                      'direct_support_count': len(supports[e.key]),
                      'direct_geo_support_count': sum(by_key[key].terminal for key in supports[e.key]),
@@ -427,12 +440,13 @@ def COMM_results(elements, edges, rows, config, output):
                                                   'connections': edges,
                                                   'review_connections': review_edges,
                                                   'geometry_failures': failures}, indent=2, ensure_ascii=False), encoding='utf-8')
-    _csv(output / 'elements.csv', rows, list(rows[0]) if rows else ['GlobalId', 'status'])
+    _csv(output / 'elements.csv', rows,
+         list(rows[0]) if rows else ['GlobalId', 'status', 'bearing_path_evidence'])
     _csv(output / 'connections.csv', edges, ['upper', 'lower', 'vertical_gap_m', 'horizontal_gap_m',
                                            'overlap_area_m2', 'contact',
                                            'overlap_ratio_of_smaller_face'])
     _csv(output / 'load_path_issues.csv', issues,
-         ['GlobalId', 'name', 'type', 'storey', 'status', 'review_reason',
+         ['GlobalId', 'name', 'type', 'storey', 'status', 'bearing_path_evidence', 'review_reason',
           'direct_support_count', 'direct_geo_support_count', 'unresolved_branch_ends',
           'review_path_intersections', 'missing_or_limited_information'])
     _csv(output / 'geometry_failures.csv', failures, ['model', 'GlobalId', 'name', 'type', 'error'])
@@ -521,3 +535,4 @@ def CHEK_load_path(str_model, geo_model, config):
             'review_connections': [x for e in elements for x in e.review_connections],
             'tolerance_m': config['tolerance_m'],
             'foundation_selection_note': config.get('foundation_selection_note', '')}
+    
