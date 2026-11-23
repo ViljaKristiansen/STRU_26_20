@@ -20,8 +20,6 @@ Our work is documented in the following assignments:
 
 ### June Muren Ertesvåg (s253445)
 
-### June Muren Ertesvåg (s253445)
-
 Before starting this course, I had a lot of experience with Revit and BIM modelling, but less experience with Python and working with IFC data. I would therefore say that I started at the Analyst level, but with limited experience in using Python for BIM analysis. Throughout the course, I have learned how Python and IfcOpenShell can be used to extract and analyse information from IFC models. In A1, we discovered the importance of understanding how information is represented in IFC models. In A2, we developed a use case for checking potential load paths, which we later used to create our A4 tool. Developing the A3 tutorial also helped me understand the basic Python code better. I would still place myself at the Analyst level, but with a much better understanding of how BIM data can be used beyond modelling. I still have a lot to learn about Python, especially understanding and developing code more independently.
 
 ### Vilja Kristiansen (s253442)
