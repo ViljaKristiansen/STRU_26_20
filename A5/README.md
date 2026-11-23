@@ -20,9 +20,9 @@ Our work is documented in the following assignments:
 
 ## 1. Learning Experience
 
-### Student 1
+### June Muren Ertesvåg (s253445)
 
-...
+Before starting this course, I had a lot of experience with Revit and BIM modelling, but less experience with Python and working with IFC data. I would therefore say that I started at the Analyst level, but with limited experience in using Python for BIM analysis. Throughout the course, I have learned how Python and IfcOpenShell can be used to extract and analyse information from IFC models. In A1, we discovered that the information in an IFC model does not always match what is described in the structural report. In A2, we learned how to identify a specific problem and develop a workflow for checking it. In A3, we created a tutorial based on what we had learned about extracting IFC information with Python, which also helped me understand the basic code better. Through developing our Load Path Checker in A4, I learned more about how IFC geometry and information can be used to automate model checks. I would still place myself at the Analyst level, but with a much better understanding of how BIM data can be used beyond modelling. However, I still have a lot to learn when it comes to Python, especially understanding the code properly and being able to develop and improve it more independently.
 
 ### Vilja Kristiansen (s253442)
 
@@ -103,7 +103,11 @@ In my future work as a structural engineer I can see how OpenBIM could be of use
 
 ### June Muren Ertesvåg (s253445)
 
-*To be completed.*
+The most important thing I learned from this course was how Python can be used to extract information from IFC models, since IFC is widely used in the construction industry. The most challenging part was the Python coding itself, especially figuring out how to develop a good tool that could also check its own results.
+
+I am most satisfied with the fact that we managed to develop a useful tool and gained knowledge that we can take with us into our future careers. If I were to do something differently, I would probably narrow down the scope and focus on a more specific tool. Our tool became quite extensive, and since it cannot always identify the load paths correctly, manual inspection of the model is still necessary.
+
+Overall, the course has given me a much better understanding of BIM and what it can be used for beyond modelling in Revit, creating IFC files and performing clash detection. I now see more possibilities for using BIM and Python in structural engineering, and this is something I will take with me into my future work.
 
 ### Vilja Kristiansen (s253442)
 
