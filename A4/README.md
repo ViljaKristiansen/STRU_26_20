@@ -139,6 +139,16 @@ CSV fields containing lists are JSON-encoded. Output filenames are overwritten o
 
 A positive status does **not** mean that all supports are sufficient or that the element is structurally safe. A negative status identifies an issue for review, not a confirmed structural defect.
 
+### Does a path depend on the gap tolerance?
+
+The `bearing_path_evidence` field in `elements.csv` and `results.json` shows whether a path to a listed GEO foundation candidate can be found using only connections classified as `AREA_CONTACT`.
+| Value | Meaning |
+| --- | --- |
+| `AREA_CONTACT_PATH_EXISTS` | At least one path uses only area contacts. the reported `example_path` may follow a different path. |
+| `PATH_REQUIRES_TOLERANCE`| Every path in the support graph uses at least one connection labelled `WITHIN_TOLERANCE_REVIEW`. |
+| `NO_BEARING_PATH` | The support graph has no path to a listed GEO foundation candidate. A path may still appear in the separate intersection scenario. |
+| `NOT_ASSESSED` | The element has insufficient geometry for the bearing check. |
+
 ## Tested model results
 
 The latest completed run used the supplied STR and GEO models and the default **20 mm tolerance**.
