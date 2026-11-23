@@ -6,9 +6,7 @@
 
 ## Introduction
 
-Throughout the Advanced BIM course, our group has worked with OpenBIM, IFC models and Python to explore how BIM data can be used for automated structural analysis and model validation.
-
-The assignments have gradually developed our understanding of IFC data, from extracting basic information to developing a tool for checking potential geometric load paths.
+Throughout the Advanced BIM course, we have explored how Python and OpenBIM can be used to extract information from IFC models and automate structural model checks. Our work developed from basic IFC data extraction to creating a tool for identifying potential geometric load paths.
 
 Our work is documented in the following assignments:
 
@@ -22,7 +20,9 @@ Our work is documented in the following assignments:
 
 ### June Muren Ertesvåg (s253445)
 
-Before starting this course, I had a lot of experience with Revit and BIM modelling, but less experience with Python and working with IFC data. I would therefore say that I started at the Analyst level, but with limited experience in using Python for BIM analysis. Throughout the course, I have learned how Python and IfcOpenShell can be used to extract and analyse information from IFC models. In A1, we discovered that the information in an IFC model does not always match what is described in the structural report. In A2, we learned how to identify a specific problem and develop a workflow for checking it. In A3, we created a tutorial based on what we had learned about extracting IFC information with Python, which also helped me understand the basic code better. Through developing our Load Path Checker in A4, I learned more about how IFC geometry and information can be used to automate model checks. I would still place myself at the Analyst level, but with a much better understanding of how BIM data can be used beyond modelling. However, I still have a lot to learn when it comes to Python, especially understanding the code properly and being able to develop and improve it more independently.
+### June Muren Ertesvåg (s253445)
+
+Before starting this course, I had a lot of experience with Revit and BIM modelling, but less experience with Python and working with IFC data. I would therefore say that I started at the Analyst level, but with limited experience in using Python for BIM analysis. Throughout the course, I have learned how Python and IfcOpenShell can be used to extract and analyse information from IFC models. In A1, we discovered the importance of understanding how information is represented in IFC models. In A2, we developed a use case for checking potential load paths, which we later used to create our A4 tool. Developing the A3 tutorial also helped me understand the basic Python code better. I would still place myself at the Analyst level, but with a much better understanding of how BIM data can be used beyond modelling. I still have a lot to learn about Python, especially understanding and developing code more independently.
 
 ### Vilja Kristiansen (s253442)
 
@@ -33,13 +33,11 @@ By the end of this course, i have become more confident in using VS code and how
 
 ## 2. Developing the Tutorial
 
-Tutorial titled **Automating BIM Data Extraction with Python**.
+For A3, we developed a tutorial titled Automating BIM Data Extraction with Python, based on techniques we had learned while developing our A4 tool. We demonstrated how to open an IFC model, identify and count structural columns, and extract information such as names and GlobalIds. Our goal was to make the process easy to follow for students with limited Python experience.
 
-For A3, we worked together to create a tutorial showing how Python and IfcOpenShell can be used to open an IFC model, identify and count structural columns, and extract information such as names and GlobalIds. The tutorial was based on techniques we had learned while developing our A4 tool. Our goal was to explain the basics of IFC data extraction in a way that students with limited Python experience could understand.
+One challenge was teaching others something we had limited experience with ourselves. We had to consider which steps needed more explanation and how users could check that the code was working correctly. This also helped us understand the code better.
 
-One of the challenges was teaching others how to use something we had limited experience with ourselves. We had to think carefully about which steps needed more explanation and how users could check that the code was working correctly. This also helped us understand the code and the process better.
-
-We liked working with a use case that was relevant to structural engineering. However, clearer examples early in the course of how much a use case should cover would have helped us define the scope of our project. We also found it challenging to learn so many new tools at once. We would have preferred to spend more time learning VS Code and Blender, since these were the tools we used the most. The course has also given us ideas for how Python and OpenBIM could be used in our master's theses, especially for automating model checks and analysing structural information.
+We liked working with a use case relevant to structural engineering, but clearer examples early in the course would have helped us define the scope of our project. We also found it challenging to learn so many new tools and would have preferred more time working with VS Code and Blender. The course has also given us ideas for using Python and OpenBIM in our master's theses, especially for automated model checking.
 
 ---
 
@@ -51,25 +49,9 @@ We received very positive feedback on our A3 tutorial. The video was described a
 
 ### Did the tool address the identified use case?
 
-In A2, our group identified the need to check whether structural elements have a potential continuous geometric support path towards the foundation system.
+In A2, we identified the need to check whether structural elements have a potential continuous geometric support path towards the foundation system. To address this, we developed the IFC Load Path Checker in A4. The tool uses Python and IfcOpenShell to analyse structural and GEO IFC models and identify potential connections between structural elements. In our latest analysis of 800 structural elements, 448 had potential paths, including 339 with unresolved branches. Another 242 required consideration of unverified geometric intersections, while 95 had no identified path and 15 had insufficient geometry.
 
-To address this, we developed the **IFC Load Path Checker** in A4.
-
-The tool uses Python and IfcOpenShell to analyse structural and geotechnical IFC models. It identifies potential geometric connections between slabs, beams, columns, walls and selected foundation candidates.
-
-The tool generates JSON and CSV results, identifying elements with potential support paths and elements requiring further investigation.
-
-The latest documented analysis included 800 structural elements and identified:
-
-- 109 elements with potential paths and no unresolved branches.
-- 339 elements with potential paths but unresolved branches.
-- 242 elements with paths identified only when unverified geometric intersections were considered.
-- 95 elements without an identified geometric path.
-- 15 elements with insufficient geometry for the applied method.
-
-These results demonstrate that the tool can identify potential geometric support paths and highlight elements requiring further review.
-
-However, the tool performs geometric screening rather than structural verification. It does not assess structural capacity, connection resistance or actual load transfer.
+The tool partly addressed our use case by identifying potential support paths and highlighting elements that require further investigation. However, it cannot verify actual load transfer or structural capacity, and some results still require manual inspection of the model. We therefore see it as a useful screening tool rather than a complete load path verification tool.
 
 ### Relevant Advanced Building Design stages
 
