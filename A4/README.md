@@ -20,9 +20,8 @@ The Python tool uses **IfcOpenShell**, NumPy and Shapely to examine two IFC4 mod
 
 1. **CAPT – Capture:** Read `IfcColumn`, `IfcBeam`, `IfcSlab` and `IfcWall` from STR, and `IfcColumn`, `IfcWall`, `IfcFooting` and `IfcPile` from GEO. Extract GlobalIds, names, storey associations, available materials/profiles and world-space geometry.
 2. **CONN – Connect:** Identify potential upper-to-lower support bearing connections using vertical proximity, horizontal face overlap and a configurable gap tolerance. Separately record selected geometric intersections between STR beams/slabs and lower STR columns/walls for manual check.
-4. Identify potential upper-to-lower bearing contacts using vertical proximity and actual horizontal mesh-face overlap. Separately record selected geometric intersections between STR beams/slabs and lower STR columns/walls for manual review.
-5. **CHEK – Check:** Search the directed support graph for possible paths from STR elements to explicitly listed GEO foundation candidates. Record unresolved branches and distinguish paths that exist only when unverified intersections are considered.
-6. **COMM – Communicate:** Export traceable CSV and JSON results and a short Markdown report, including element statuses, review reasons, connections and limitations.
+3.  **CHEK – Check:** Search the directed support graph for possible paths from STR elements to explicitly listed GEO foundation candidates. Record unresolved branches and distinguish paths that exist only when unverified intersections are considered.
+4.   *COMM – Communicate:** Export traceable CSV and JSON results and a short Markdown report, including element statuses, review reasons, connections and limitations.
 
 The separate IDS preflight checks the presence of selected IFC classes and semantic information (identity, name, material and storey containment). It does not check structural connections.
 
