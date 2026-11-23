@@ -21,7 +21,7 @@ The Python tool uses **IfcOpenShell**, NumPy and Shapely to examine two IFC4 mod
 1. **CAPT – Capture:** Read `IfcColumn`, `IfcBeam`, `IfcSlab` and `IfcWall` from STR, and `IfcColumn`, `IfcWall`, `IfcFooting` and `IfcPile` from GEO. Extract GlobalIds, names, storey associations, available materials/profiles and world-space geometry.
 2. **CONN – Connect:** Identify potential upper-to-lower support bearing connections using vertical proximity, horizontal face overlap and a configurable gap tolerance. Separately record selected geometric intersections between STR beams/slabs and lower STR columns/walls for manual check.
 3.  **CHEK – Check:** Search the directed support graph for possible paths from STR elements to explicitly listed GEO foundation candidates. Record unresolved branches and distinguish paths that exist only when unverified intersections are considered.
-4.   *COMM – Communicate:** Export traceable CSV and JSON results and a short Markdown report, including element statuses, review reasons, connections and limitations.
+4.  **COMM – Communicate:** Export traceable CSV and JSON results and a short Markdown report, including element statuses, review reasons, connections and limitations.
 
 The separate IDS preflight checks the presence of selected IFC classes and semantic information (identity, name, material and storey containment). It does not check structural connections.
 
@@ -141,10 +141,10 @@ A positive status does **not** mean that all supports are sufficient or that the
 
 ### Does a path depend on the gap tolerance?
 
-The `bearing_path_evidence` field in `elements.csv` and `results.json` shows whether a path to a listed GEO foundation candidate can be found using only connections classified as `AREA_CONTACT`.
+The `bearing_path_evidence` field in `elements.csv`, `load_path_issues.csv` and `results.json` shows whether a path to a listed GEO foundation candidate can be found using only connections classified as `AREA_CONTACT`.
 | Value | Meaning |
 | --- | --- |
-| `AREA_CONTACT_PATH_EXISTS` | At least one path uses only area contacts. the reported `example_path` may follow a different path. |
+| `AREA_CONTACT_PATH_EXISTS` | At least one path uses only area contacts. The reported `example_path` may follow a different path. |
 | `PATH_REQUIRES_TOLERANCE`| Every path in the support graph uses at least one connection labelled `WITHIN_TOLERANCE_REVIEW`. |
 | `NO_BEARING_PATH` | The support graph has no path to a listed GEO foundation candidate. A path may still appear in the separate intersection scenario. |
 | `NOT_ASSESSED` | The element has insufficient geometry for the bearing check. |
