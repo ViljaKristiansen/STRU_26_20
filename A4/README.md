@@ -137,7 +137,7 @@ CSV fields containing lists are JSON-encoded. Output filenames are overwritten o
 | `NO_PATH_IDENTIFIED_REVIEW` | No path was identified by either the bearing graph or the separate intersection-review scenario |
 | `INSUFFICIENT_GEOMETRY` | The element could not be assessed using the required horizontal base-face method |
 
-A positive status does **not** mean that all supports are sufficient or that the element is structurally safe. A negative status identifies an issue for review, not a confirmed structural defect.
+A positive status does **not** mean that all supports are sufficient or that the element is structurally safe. A negative status identifies an issue to check, not a confirmed structural defect.
 
 ### Does a path depend on the gap tolerance?
 
