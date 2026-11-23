@@ -80,7 +80,7 @@ It may support structural engineers and BIM coordinators by identifying potentia
 
 ## 4. Future Use of OpenBIM
 
-### Student 1
+### June Muren Ertesvåg (s253445)
 
 I will most likely use OpenBIM in my master's thesis, and after this course I feel that I have a much better foundation for using it. I think these tools can be useful for automating tasks and making work more efficient. The course has also opened my eyes to more possibilities for what BIM can actually be used for, beyond just modelling.
 
@@ -94,7 +94,7 @@ I also expect to use OpenBIM in my future work as a structural engineer, since t
 
 ## 5. Individual Wrap-up
 
-### Student 1
+### June Muren Ertesvåg (s253445)
 
 *To be completed.*
 
