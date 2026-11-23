@@ -106,4 +106,6 @@ Overall, the course has given me a much better understanding of BIM and what it 
 
 ### Vilja Kristiansen (s253442)
 
+In A1, we compared information from the structural report with what we could fin in the IFC model. in A2, we turned that experience into a specific question about how structural elements are possibly supported. Creating the A3 tutorial helped me better understand the steps behind extracting IFC data, and in A4 we used that knowledge to build a tool that checks for possible support paths to the foundations.
 
+Looking back, A4 made me think more carefully about what results from scripts actually tell me. For example, if the tool finds no support path for a beam, I would first look at the beam and the surrounding elements in the model. The result could point to a gap in the model or to a support condition that our method did not capture. This is where I see the value of automation in structural engineering, in addition to that it can help me decide where to look first and what to investigate in more detail
