@@ -19,9 +19,10 @@ The use case was identified in our [A2 Use Case Analysis](../A2/README.md), base
 The Python tool uses **IfcOpenShell**, NumPy and Shapely to examine two IFC4 models. Its workflow follows four steps:
 
 1. **CAPT – Capture:** Read `IfcColumn`, `IfcBeam`, `IfcSlab` and `IfcWall` from STR, and `IfcColumn`, `IfcWall`, `IfcFooting` and `IfcPile` from GEO. Extract GlobalIds, names, storey associations, available materials/profiles and world-space geometry.
-2. **CONN – Connect:** Identify potential upper-to-lower bearing contacts using vertical proximity and actual horizontal mesh-face overlap. Separately record selected geometric intersections between STR beams/slabs and lower STR columns/walls for manual review.
-3. **CHEK – Check:** Search the directed support graph for possible paths from STR elements to explicitly listed GEO foundation candidates. Record unresolved branches and distinguish paths that exist only when unverified intersections are considered.
-4. **COMM – Communicate:** Export traceable CSV and JSON results and a short Markdown report, including element statuses, review reasons, connections and limitations.
+2. **CONN – Connect:** Identify potential upper-to-lower support bearing connections using vertical proximity, horizontal face overlap and a configurable gap tolerance. Separately record selected geometric intersections between STR beams/slabs and lower STR columns/walls for manual check.
+4. Identify potential upper-to-lower bearing contacts using vertical proximity and actual horizontal mesh-face overlap. Separately record selected geometric intersections between STR beams/slabs and lower STR columns/walls for manual review.
+5. **CHEK – Check:** Search the directed support graph for possible paths from STR elements to explicitly listed GEO foundation candidates. Record unresolved branches and distinguish paths that exist only when unverified intersections are considered.
+6. **COMM – Communicate:** Export traceable CSV and JSON results and a short Markdown report, including element statuses, review reasons, connections and limitations.
 
 The separate IDS preflight checks the presence of selected IFC classes and semantic information (identity, name, material and storey containment). It does not check structural connections.
 
@@ -105,7 +106,7 @@ The file `foundation_inventory.csv` records all 230 GEO elements and which are i
 
 Both supplied models declare millimetres. IfcOpenShell produces world-space geometry in metres with the current geometry settings; the mesh coordinates must not be scaled a second time. The models have broadly overlapping plan extents. STR geometry spans approximately Z = 40.00–57.25 m and GEO approximately Z = 38.40–40.70 m. Broad overlap is a necessary check, not proof of survey or coordinate accuracy.
 
-Potential bearing contacts are determined from horizontal faces at the extreme bottom and top elevations, with a **20 mm provisional screening tolerance**. The program distinguishes face contacts from contacts within tolerance. A separate review scenario considers selected geometric intersections that may represent joints or modelling clashes; these intersections are **not** accepted as verified bearing connections.
+The tool determines potential bearing contact by comparing the bottom face of an upper element with the top face of a lower element. With the chosen **20 mm tolerance**, it can include element pairs which have small overlaps or gaps. If the faces have no overlap in plan, the pair can still be included when the horizontal gap is within the same tolerance. These tolerance-based connections are labelled `WITHIN_TOLERANCE_REVIEW` in `connections.csv` and are included in the support graph. A separate review scenario considers selected geometric intersections that may represent joints or modelling clashes; these intersections are **not** accepted as verified bearing connections.
 
 The tolerance is not an Eurocode requirement or a calibrated connection acceptance criterion. Sloping/stepped interfaces, side bearings, hangers and other connection types may be missed.
 
