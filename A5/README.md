@@ -22,11 +22,12 @@ Our work is documented in the following assignments:
 
 ### Student 1
 
-*To be completed.*
+...
 
-### Student 2
+### Vilja Kristiansen (s253442)
 
-*To be completed.*
+Before this course, i had basic knowledge to BIM, IFC and Python. I have previously used AI tools to help me write codes, but had little knowledge about the different parts to what the codes actually write. I could therefore make a script run without actually knowing or understanding how the results were made.
+By the end of this course, i have become more confident in using VS code and how to extract information from IFC files by use of Python and IfcOpenShell. I can now better understand how to find different construction elements and extract information about them by their name and GlobalIds. Which as a result makes it easier to find elements in models and review the results from the script. I would still like to learn more and become more independent in writing and understanding codes.
 
 ---
 
@@ -39,6 +40,11 @@ The tutorial demonstrates how to use Python and IfcOpenShell to open an IFC mode
 The tutorial was based on techniques that were also relevant to developing our A4 tool. We wanted to explain the basic principles of IFC data extraction in a way that students with limited Python experience could follow.
 
 *To be completed: Reflection on the choice of use case, course tools, freedom in the assignments and relevance for future thesis work.*
+### Vilja Kristiansen (s253442)
+
+We cooperated throughout the entire process in developing the tutorial for A3. It was challenging teaching others how to use a tool which we had previously minimal experience with. To explain the tool and process clearly, we had to evaluate which steps needed more explanation, and what users should look after to see that the code was working. This made us more aware of the different parts of the code and method we needed to understand better.
+
+It was good to use a case which was relevant for a structural engineer. At the same time, clearer examples early in the course of how much a use case should cover would have made it easier to define the scope of our project. At times, we also found it difficult to get familiar with so many new tools. We would have liked to spend more time working with and getting to know VS Code and Blender, as these were the tools we used the most.
 
 ---
 
@@ -86,9 +92,10 @@ I will most likely use OpenBIM in my master's thesis, and after this course I fe
 
 I also expect to use OpenBIM in my future work as a structural engineer, since there is always a need to improve and make working methods more efficient. I think it will be especially useful for checking and validating models and results. I can also see myself using Python for different tasks, such as automating repetitive work, performing checks and extracting information from BIM models.
 
-### Student 2
+### Vilja Kristiansen (s253442)
 
-*To be completed.*
+I would like to use OpenBIM in my master thesis, if it suits my topic. 
+In my future work as a structural engineer I can see how OpenBIM could be of use, especially considering model checking and coordination between disciplines. For example, a script could flag elements that need a closer look before the model is used for further design work.
 
 ---
 
@@ -98,6 +105,6 @@ I also expect to use OpenBIM in my future work as a structural engineer, since t
 
 *To be completed.*
 
-### Student 2
+### Vilja Kristiansen (s253442)
 
-*To be completed.*
+
