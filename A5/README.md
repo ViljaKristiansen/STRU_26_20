@@ -82,7 +82,9 @@ It may support structural engineers and BIM coordinators by identifying potentia
 
 ### Student 1
 
-*To be completed.*
+I will most likely use OpenBIM in my master's thesis, and after this course I feel that I have a much better foundation for using it. I think these tools can be useful for automating tasks and making work more efficient. The course has also opened my eyes to more possibilities for what BIM can actually be used for, beyond just modelling.
+
+I also expect to use OpenBIM in my future work as a structural engineer, since there is always a need to improve and make working methods more efficient. I think it will be especially useful for checking and validating models and results. I can also see myself using Python for different tasks, such as automating repetitive work, performing checks and extracting information from BIM models.
 
 ### Student 2
 
