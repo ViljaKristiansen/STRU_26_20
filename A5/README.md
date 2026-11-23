@@ -35,16 +35,11 @@ By the end of this course, i have become more confident in using VS code and how
 
 For A3, our group developed a tutorial titled **Automating BIM Data Extraction with Python**.
 
-The tutorial demonstrates how to use Python and IfcOpenShell to open an IFC model, identify structural columns, count the elements and extract information such as their names and GlobalIds.
+For A3, we worked together to create a tutorial showing how Python and IfcOpenShell can be used to open an IFC model, identify and count structural columns, and extract information such as names and GlobalIds. The tutorial was based on techniques we had learned while developing our A4 tool. Our goal was to explain the basics of IFC data extraction in a way that students with limited Python experience could understand.
 
-The tutorial was based on techniques that were also relevant to developing our A4 tool. We wanted to explain the basic principles of IFC data extraction in a way that students with limited Python experience could follow.
+One of the challenges was teaching others how to use something we had limited experience with ourselves. We had to think carefully about which steps needed more explanation and how users could check that the code was working correctly. This also helped us understand the code and the process better.
 
-*To be completed: Reflection on the choice of use case, course tools, freedom in the assignments and relevance for future thesis work.*
-### Vilja Kristiansen (s253442)
-
-We cooperated throughout the entire process in developing the tutorial for A3. It was challenging teaching others how to use a tool which we had previously minimal experience with. To explain the tool and process clearly, we had to evaluate which steps needed more explanation, and what users should look after to see that the code was working. This made us more aware of the different parts of the code and method we needed to understand better.
-
-It was good to use a case which was relevant for a structural engineer. At the same time, clearer examples early in the course of how much a use case should cover would have made it easier to define the scope of our project. At times, we also found it difficult to get familiar with so many new tools. We would have liked to spend more time working with and getting to know VS Code and Blender, as these were the tools we used the most.
+We liked working with a use case that was relevant to structural engineering. However, clearer examples early in the course of how much a use case should cover would have helped us define the scope of our project. We also found it challenging to learn so many new tools at once. We would have preferred to spend more time learning VS Code and Blender, since these were the tools we used the most.
 
 ---
 
