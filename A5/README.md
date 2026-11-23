@@ -33,13 +33,13 @@ By the end of this course, i have become more confident in using VS code and how
 
 ## 2. Developing the Tutorial
 
-For A3, our group developed a tutorial titled **Automating BIM Data Extraction with Python**.
+Tutorial titled **Automating BIM Data Extraction with Python**.
 
 For A3, we worked together to create a tutorial showing how Python and IfcOpenShell can be used to open an IFC model, identify and count structural columns, and extract information such as names and GlobalIds. The tutorial was based on techniques we had learned while developing our A4 tool. Our goal was to explain the basics of IFC data extraction in a way that students with limited Python experience could understand.
 
 One of the challenges was teaching others how to use something we had limited experience with ourselves. We had to think carefully about which steps needed more explanation and how users could check that the code was working correctly. This also helped us understand the code and the process better.
 
-We liked working with a use case that was relevant to structural engineering. However, clearer examples early in the course of how much a use case should cover would have helped us define the scope of our project. We also found it challenging to learn so many new tools at once. We would have preferred to spend more time learning VS Code and Blender, since these were the tools we used the most.
+We liked working with a use case that was relevant to structural engineering. However, clearer examples early in the course of how much a use case should cover would have helped us define the scope of our project. We also found it challenging to learn so many new tools at once. We would have preferred to spend more time learning VS Code and Blender, since these were the tools we used the most. The course has also given us ideas for how Python and OpenBIM could be used in our master's theses, especially for automating model checks and analysing structural information.
 
 ---
 
@@ -47,7 +47,7 @@ We liked working with a use case that was relevant to structural engineering. Ho
 
 ### Feedback on the tutorial
 
-*To be completed after reviewing peer feedback.*
+We received very positive feedback on our A3 tutorial. The video was described as informative and easy to follow, especially because we combined all the steps into one video with a voiceover explaining the process. This made it easier for others to understand the code and follow along. The tutorial was also selected to be shown to the whole class and will also be available for future students to use as learning material through the video link in our A3 README. 
 
 ### Did the tool address the identified use case?
 
