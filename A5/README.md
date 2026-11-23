@@ -80,9 +80,7 @@ In my future work as a structural engineer I can see how OpenBIM could be of use
 
 ### June Muren Ertesvåg (s253445)
 
-The most important thing I learned from this course was how Python can be used to extract information from IFC models, since IFC is widely used in the construction industry. The most challenging part was the Python coding itself, especially figuring out how to develop a good tool that could also check its own results.
-
-I am most satisfied with the fact that we managed to develop a useful tool and gained knowledge that we can take with us into our future careers. If I were to do something differently, I would probably narrow down the scope and focus on a more specific tool. Our tool became quite extensive, and since it cannot always identify the load paths correctly, manual inspection of the model is still necessary.
+The most important thing I learned from this course was how Python can be used to extract information from IFC models, since IFC is widely used in the construction industry. The most challenging part was the Python coding itself, especially figuring out how to develop a good tool that could also check its own results. I am most satisfied with the fact that we managed to develop a useful tool and gained knowledge that we can take with us into our future careers. If I were to do something differently, I would probably narrow down the scope and focus on a more specific tool. Our tool became quite extensive, and since it cannot always identify the load paths correctly, manual inspection of the model is still necessary.
 
 Overall, the course has given me a much better understanding of BIM and what it can be used for beyond modelling in Revit, creating IFC files and performing clash detection. I now see more possibilities for using BIM and Python in structural engineering, and this is something I will take with me into my future work.
 
