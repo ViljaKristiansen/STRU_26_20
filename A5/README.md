@@ -24,7 +24,7 @@ Before starting this course, I had a lot of experience with Revit and BIM modell
 
 ### Vilja Kristiansen (s253442)
 
-Before this course, i had basic knowledge to BIM, IFC and Python. I have previously used AI tools to help me write codes, but had little knowledge about the different parts to what the codes actually write. I could therefore make a script run without actually knowing or understanding how the results were made.
+Before this course, i had experience in using BIM tools such as Revit, but minimal experience and knowledge to IFC and Python. I have previously used AI tools to help me write codes, but had little knowledge about the different parts to what the codes actually write. I could therefore make a script run without actually knowing or understanding how the results were made.
 By the end of this course, i have become more confident in using VS code and how to extract information from IFC files by use of Python and IfcOpenShell. I can now better understand how to find different construction elements and extract information about them by their name and GlobalIds. Which as a result makes it easier to find elements in models and review the results from the script. I would still like to learn more and become more independent in writing and understanding codes.
 
 ---
